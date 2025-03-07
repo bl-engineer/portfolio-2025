@@ -1,3 +1,11 @@
+/* create custom CSS variables (also called custom properties) and apply them to the root of the page, making them accessible to all other CSS */
+:root {
+  /* declare a variable with `--` syntax */
+  --dark: #13293d;
+  --light: #fff;
+  --navlink-color: #b9c6ae;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -9,8 +17,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1%;
-  background-color: #13293d;
-  color: #fff;
+  /* use CSS var() function to reference a variable created above */
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 h1 {
@@ -22,6 +31,12 @@ h2 {
   font-size: 250%;
 }
 
+a[href*='.css']::after {
+  content: '📝';
+  display: inline-block;
+  margin-left: 3px;
+}
+
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -29,24 +44,26 @@ nav ul {
 }
 
 nav a {
-  color: #b9C6ae;
+  background-color: unset;
+  color: var(--navlink-color);
   font-weight: bold;
   text-decoration: none;
 }
 
 nav a:hover {
-  color: #fff;
+  color: var(--light);
 }
 
 main {
   display: flex;
   flex: 1 1 0;
-  max-width: 1200px;
+  max-width: 96%;
   margin: 2% auto;
 }
 
 article {
-  border-bottom: 1px solid #d8a47f;
+  /* If we were to change the value of `--dark`, then all references to it would change automatically */
+  border-bottom: 1px solid var(--dark);
 }
 
 article p {
@@ -60,105 +77,20 @@ article ul {
   list-style: circle;
 }
 
-form {
-  max-width: 400px;
-}
-
-form h3 {
-  font-size: 150%;
-}
-
-form p {
-  margin: 3% 0;
-}
-
-label {
-  display: block;
-}
-
-button {
-  padding: 1% 2%;
-  color: #fff;
-  background-color: #13293d;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-/* The default appearance is removed and replaced with a custom image */
-select {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
-  background-image: url("../images/arrow.png");
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
-}
-
-.text-input {
-  width: 100%;
-  max-width: 100%;
-}
-
-.text-input, select {
-  padding: 1%;
-  outline: none;
-  border: 1.2px solid #b9C6ae;
-}
-
-.text-input:hover, .checkbox:hover, 
-select:hover, button:hover {
-  box-shadow: 0 0 5px #999;
-}
-
-/* The right-side border changes when the element is clicked on or tabbed into */
-.text-input:focus {
-  border-right-width: 5px;
-}
-
-/* The border becomes dashed when the element's placeholder text is visible */
-.text-input:placeholder-shown {
-  border-style: dashed;
-}
-
-.flex-row {
-  display: flex;
-  align-items: center;
-}
-
-.flex-row select {
-  flex: 1 0 0;
-  margin-left: 2%;
-}
-
-.flex-row input {
-  margin-right: 2%;
-}
-
-/* The font style of the adjacent element changes when the given element is checked */
-.checkbox:checked + label {
-  color: #999999;
-  font-style: italic;
-}
-
-/* When checked, the adjacent element has text insert at the end */
-.checkbox:checked + label::after {
-  margin-left: 10px;
-  font-size: 90%;
-  content: "(thanks!)";
-}
-
 footer {
   display: flex;
   justify-content: center;
   padding: 2%;
-  background-color: #13293d;
-  color: #fff;
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 @media screen and (max-width: 768px) {
   header {
     flex-direction: column;
+  }
+
+  main {
+    max-width: 1200px;
   }
 }
