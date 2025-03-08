@@ -1,92 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio with CSS</title>
-    <link rel="stylesheet" href="./Assets/css/reset.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link rel="stylesheet" href="./Assets/css/reset.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
-  </head>
-
-  <body>
+    <link rel="stylesheet" href="./Assets/js/">
+</head>
+<body>
     <header>
-      <h1>Bl_engineer</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Resources</a></li>
-        </ul>
-      </nav>
+        <div class="container">
+            <h1>Bl_engineer</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
-    <main>
-      <section>
-        <article>
-          <h2>A List of Learning Resources</h2>
-          <div>
-            <p>
-              A successful web developer is one that knows that there's always
-              room to grow and learn. You may not use every single tool that's
-              offered to you, but it's always good to know that certain tools
-              exist. Check out these resources to broaden your knowledge:
-            </p>
-            <ul>
-              <li>
-                Mozilla Developer Network's documentation on
-                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-                  >Cascading Style Sheets (CSS)</a
-                >
-                is a good resource for all things CSS and web development in
-                general.
-              </li>
-              <li>
-                Our own <a href="./assets/css/reset.css">reset.css</a> file
-                shows how to set default browser styles.
-              </li>
-              <li>
-                Another reset style sheet called
-                <a
-                  href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
-                  >normalize.css</a
-                >
-                is popular in the web development community
-              </li>
-              <li>
-                Our own <a href="./assets/css/style.css">style.css</a> file
-                shows how we've designed the page we're reading!
-              </li>
-
-              <li>
-                The popular blog,
-                <a href="https://css-tricks.com/">CSS Tricks,</a> has a lot of
-                articles and resources to make you a better developer!
-              </li>
-            </ul>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-              natus recusandae amet nostrum odit, ut unde non sint, quia sed
-              inventore odio, delectus iure! Eligendi vitae fuga blanditiis
-              accusamus tempore! Lorem ipsum dolor sit amet consectetur
-              adipisicing elit. Consectetur, nisi, saepe quas sint consequuntur
-              esse voluptatum, dolores dolor aspernatur neque laborum dolorum
-              dolorem repudiandae. Dignissimos eveniet sequi corporis tempore
-              ullam!
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-              natus recusandae amet nostrum odit, ut unde non sint, quia sed
-              inventore odio, delectus iure! Eligendi vitae fuga blanditiis
-              accusamus tempore!
-            </p>
-          </div>
-        </article>
-      </section>
-    </main>
-
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am a passionate software engineer with experience in web development and data analysis. I love creating beautiful and functional websites.</p>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skill">
+                <h3>HTML</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3>CSS</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="project">
+                <h3>Project One</h3>
+                <p>Description of project one.</p>
+            </div>
+            <div class="project">
+                <h3>Project Two</h3>
+                <p>Description of project two.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <form action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+    <button id="back-to-top">Top</button>
     <footer>
-      <span>Thanks for visiting!</span>
+        <div class="container">
+            <p>&copy; 2025 Bocar Ly. All rights reserved.</p>
+        </div>
     </footer>
-  </body>
+    <script src="./portfolio.js"></script>
+</body>
 </html>
