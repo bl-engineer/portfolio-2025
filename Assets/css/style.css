@@ -10,6 +10,9 @@ body {
   background-color: #f4f4f4;
   color: #333;
 }
+h1 {
+  font-size: 200%;
+}
 
 .container {
   width: 80%;
@@ -20,7 +23,7 @@ header {
   background: #13293d;
   color: #fff;
   padding: 1rem 0;
-  text-align: center;
+  /* text-align: center; */
 }
 
 nav ul {
